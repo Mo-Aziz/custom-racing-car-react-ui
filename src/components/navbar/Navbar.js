@@ -3,51 +3,112 @@ import "./NavbarStyles.css";
 import { GiCheckeredFlag, GiCarWheel } from "react-icons/gi";
 import { FaBars, FaFacebook, FaTimes, FaInstagram } from "react-icons/fa";
 import {} from "react-icons/gi";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   // handling side menu toogle icon interaction
   const [click, setClick] = useState(false);
-  const [slide, setSlide]=useState(false);
+  const [slide, setSlide] = useState(false);
 
-  const handleClick = () =>{
+  const handleClick = () => {
     setClick(!click);
-    setSlide(!slide)
+    setSlide(!slide);
+  };
+
+  const handleClose =()=>{
+    setClick(!click);
   }
 
   return (
     <div className="navbar">
       <div className="container">
-        <div className={slide? "logo slide-right" : "logo"}>
+        <div className={slide ? "logo slide-right" : "logo"}>
           <h3>
-            Horse  <span>
+            Horse{" "}
+            <span>
               <GiCheckeredFlag className="logo-icon" />
-            </span>Power
-           
+            </span>
+            Power
           </h3>
         </div>
         {/* nav menu */}
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li>
-            <a href="/">Power</a>
+            <a href="/">
+              <Link
+                onClick={handleClose}
+                activeClass="active"
+                to="power"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Power
+              </Link>
+            </a>
           </li>
           <li>
-            <a href="/">Speed</a>
+            <a href="/">
+              <Link
+                onClick={handleClose}
+                activeClass="active"
+                to="speed"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Speed
+              </Link>
+            </a>
           </li>
           <li>
-            <a href="/">Handling</a>
+            <a href="/">
+              <Link
+                onClick={handleClose}
+                activeClass="active"
+                to="handling"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Handling
+              </Link>
+            </a>
           </li>
           <li>
-            <a href="/">Options</a>
+            <a href="/">
+              <Link
+                onClick={handleClose}
+                activeClass="active"
+                to="options"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Options
+              </Link>
+            </a>
           </li>
           <li>
-            <a href="/">Contact</a>
+            <a href="/">
+              <Link
+                onClick={handleClose}
+                activeClass="active"
+                to="contact"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Contact
+              </Link>
+            </a>
           </li>
           {/* mobile appearance section */}
           <div className="mobile-menu">
             <button>Shop</button>
             <button>Account</button>
             <div className="social-icons">
-              <FaFacebook  className="icon"/>
+              <FaFacebook className="icon" />
               <FaInstagram className="icon" />
               <GiCarWheel className="icon" />
             </div>
@@ -61,11 +122,14 @@ const Navbar = () => {
             <a href="/">Account</a>
           </li>
         </ul>
-        
+
         {/* toggle icons */}
         <div className="hamburger-icons" onClick={handleClick}>
-            {click ? (<FaTimes className="toggle-icon" />) : (<FaBars className="toggle-icon"/>)} 
-         
+          {click ? (
+            <FaTimes className="toggle-icon" />
+          ) : (
+            <FaBars className="toggle-icon" />
+          )}
         </div>
       </div>
     </div>

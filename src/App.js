@@ -1,5 +1,6 @@
 
  import React from "react"
+import Contact from "./components/contact/Contact";
 import Handling from "./components/handling/Handling";
 import Navbar from './components/navbar/Navbar';
 import Options from "./components/options/Options";
@@ -14,6 +15,7 @@ function App() {
     <Speed/>
     <Handling/>
     <Options/>
+    <Contact/>
     </>
   );
 }
