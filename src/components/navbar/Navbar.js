@@ -7,17 +7,22 @@ import {} from "react-icons/gi";
 const Navbar = () => {
   // handling side menu toogle icon interaction
   const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
+  const [slide, setSlide]=useState(false);
+
+  const handleClick = () =>{
+    setClick(!click);
+    setSlide(!slide)
+  }
 
   return (
     <div className="navbar">
       <div className="container">
-        <div className="logo">
+        <div className={slide? "logo slide-right" : "logo"}>
           <h3>
-            Horse Power
-            <span>
-              <GiCheckeredFlag size={30} />
-            </span>
+            Horse  <span>
+              <GiCheckeredFlag className="logo-icon" />
+            </span>Power
+           
           </h3>
         </div>
         {/* nav menu */}
@@ -32,10 +37,10 @@ const Navbar = () => {
             <a href="/">Handling</a>
           </li>
           <li>
-            <a href="/"></a>Options
+            <a href="/">Options</a>
           </li>
           <li>
-            <a href="/"></a>Contact
+            <a href="/">Contact</a>
           </li>
           {/* mobile appearance section */}
           <div className="mobile-menu">
