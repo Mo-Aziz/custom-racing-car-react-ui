@@ -47,6 +47,7 @@
   color: #f6f6f6;
   font-size: 1rem;
   font-weight: 600;
+  
 }
 .nav-menu li :hover{
   border-bottom: 1px solid #000;
@@ -59,6 +60,8 @@
   .hamburger-icons {
     display: block;
     z-index: 5;
+    padding-right: 1rem;
+  
   }
 
   .toggle-icon{
